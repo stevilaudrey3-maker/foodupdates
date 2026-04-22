@@ -1,0 +1,452 @@
+/* =========================
+   RESET
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #0f0f0f;
+    color: #fff;
+    transition: background-color 0.4s ease, color 0.4s ease;
+    overflow-x: hidden;
+}
+
+/* =========================
+   LIGHT MODE
+========================= */
+body.light-mode {
+    background: #f2f4f8;
+    color: #111;
+}
+
+/* =========================
+   GLASS BASE
+========================= */
+.navbar,
+.topbar,
+.sidebar,
+.card {
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(20, 20, 20, 0.6);
+    color: #fff;
+    transition: all 0.4s ease;
+}
+
+body.light-mode .navbar,
+body.light-mode .topbar,
+body.light-mode .sidebar,
+body.light-mode .card {
+    background: rgba(255, 255, 255, 0.65);
+    color: #111;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* =========================
+   TOPBAR
+========================= */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    font-size: 14px;
+    flex-wrap: wrap;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: red;
+}
+
+/* =========================
+   NAV LINKS
+========================= */
+nav {
+    display: flex;
+    gap: 15px;
+}
+
+nav a {
+    position: relative;
+    padding: 8px 14px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s;
+}
+
+nav a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(90deg, #ff3b3b, #ff9a3b);
+    transition: 0.3s;
+}
+
+nav a:hover::before {
+    width: 100%;
+}
+
+nav a:hover {
+    transform: translateY(-2px);
+    background: rgba(255,255,255,0.08);
+}
+
+/* =========================
+   HAMBURGER
+========================= */
+.hamburger {
+    display: none;
+    width: 45px;
+    height: 45px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.08);
+}
+
+/* =========================
+   MOBILE NAV
+========================= */
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}
+
+    .hamburger {
+        display: flex;
+    }
+
+    nav {
+        display: none;
+        flex-direction: column;
+        width: 90%;
+        margin: 10px auto;
+
+        border-radius: 16px;
+        padding: 10px 0;
+        backdrop-filter: blur(18px);
+    }
+
+    nav.show {
+        display: flex;
+    }
+
+    .content {
+        flex-direction: column;
+    }
+
+    .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 220px));
+    gap: 20px;
+    justify-content: center; /* 🔥 keeps them centered */
+}
+
+/* =========================
+   HERO
+========================= */
+.hero {
+    position: relative;
+    height: 60vh;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+}
+
+.hero-card {
+    position: absolute;
+    bottom: 20%;
+    left: 5%;
+}
+
+/* =========================
+   CONTENT (STACKED)
+========================= */
+.content {
+    display: flex;
+    flex-direction: column; /* 🔥 THIS is the fix */
+    gap: 20px;
+    padding: 20px;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    flex: 2;
+}
+
+/* =========================
+   CARD (GLOBAL SAFE)
+========================= */
+.card {
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* ❌ IMPORTANT FIX:
+   Prevent breaking SHOP layout */
+.card img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+.sidebar {
+    flex: 1;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+/* =========================
+   THEME SWITCH
+========================= */
+.theme-switch {
+    width: 50px;
+    height: 28px;
+    border-radius: 50px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.2);
+    display: flex;
+    align-items: center;
+    padding: 4px;
+    cursor: pointer;
+    position: relative;
+}
+
+.theme-switch::before {
+    content: "";
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    background: white;
+    border-radius: 50%;
+    left: 2px;
+    transition: 0.3s;
+}
+
+body.light-mode .theme-switch::before {
+    transform: translateX(22px);
+}
+
+/* =========================
+   FAVORITES
+========================= */
+.favorites {
+    padding: 30px 20px;
+}
+
+.favorites-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+/* =========================
+   POPUP
+========================= */
+.popup {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background: #111;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* =========================
+   FLOAT BUTTON (CENTERED)
+========================= */
+.fab {
+    position: fixed;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.fab {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    transition: all 0.4s ease;
+}
+
+/* when moved to side */
+.fab.right {
+    left: auto;
+    right: 20px;
+    transform: none;
+}
+@media (max-width: 768px) {
+    .fab {
+        bottom: 80px; /* 🔥 lifts it above footer area */
+    }
+}
+
+/* =========================
+   HOME BUTTON
+========================= */
+.home-btn {
+    padding: 8px 12px;
+    border-radius: 10px;
+    text-decoration: none;
+    background: rgba(255,255,255,0.08);
+    color: inherit;
+}
+
+.home-btn:hover {
+    background: rgba(255,255,255,0.2);
+}
+/* =========================
+   FOOTER
+========================= */
+.footer {
+    background: rgba(20,20,20,0.8);
+    backdrop-filter: blur(12px);
+    padding: 40px 20px;
+    margin-top: 40px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+body.light-mode .footer {
+    background: rgba(255,255,255,0.8);
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.footer-box h3 {
+    margin-bottom: 10px;
+}
+
+.footer-box a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    margin: 5px 0;
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+.footer-box a:hover {
+    opacity: 1;
+    transform: translateX(5px);
+}
+
+/* SOCIAL ICONS */
+.socials {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.socials img {
+    width: 28px;
+    height: 28px;
+    transition: 0.3s;
+}
+
+.socials img:hover {
+    transform: scale(1.2);
+}
+
+/* FOOTER BOTTOM */
+.footer-bottom {
+    text-align: center;
+    margin-top: 25px;
+    opacity: 0.7;
+    font-size: 14px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .socials {
+        justify-content: center;
+    }
+}

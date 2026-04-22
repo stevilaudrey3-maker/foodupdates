@@ -1,0 +1,498 @@
+/* =========================
+   RESET
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #0f0f0f;
+    color: #fff;
+    transition: 0.4s ease;
+    overflow-x: hidden;
+}
+
+/* =========================
+   LIGHT MODE
+========================= */
+body.light-mode {
+    background: #f5f7fb;
+    color: #222;
+}
+
+/* =========================
+   GLASS EFFECT
+========================= */
+.navbar,
+.topbar,
+.card,
+.footer {
+    backdrop-filter: blur(14px);
+    background: rgba(20,20,20,0.6);
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+body.light-mode .navbar,
+body.light-mode .topbar,
+body.light-mode .card,
+body.light-mode .footer {
+    background: rgba(255,255,255,0.7);
+    border: 1px solid rgba(0,0,0,0.08);
+}
+
+/* =========================
+   TOPBAR
+========================= */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: red;
+}
+
+/* =========================
+   SEARCH BAR
+========================= */
+.search-bar input {
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+/* =========================
+   NAV LINKS
+========================= */
+nav {
+    display: flex;
+    gap: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: inherit;
+    padding: 8px 14px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background: rgba(255,255,255,0.1);
+    transform: translateY(-2px);
+}
+
+/* =========================
+   HAMBURGER
+========================= */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 22px;
+}
+
+/* =========================
+   PAGE
+========================= */
+.page {
+    padding: 20px;
+}
+
+.page h1 {
+    margin-bottom: 20px;
+}
+
+/* =========================
+   GRID
+========================= */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 340px;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+}
+
+.card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    backface-visibility: hidden;
+    padding: 15px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* FRONT */
+.card-front {
+    background: #fff;
+}
+
+.card-front img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* BACK */
+.card-back {
+    background: linear-gradient(red, blue);
+    color: white;
+    transform: rotateY(180deg);
+
+}
+
+/* =========================
+   CARD
+========================= */
+.card {
+    padding: 10px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    position: relative;
+    
+}
+
+.card:hover {
+    transform: translateY(-6px);
+}
+
+.card img {
+    width: 100%;
+    height: 310px;
+    object-fit: cover;
+    border-radius: 10px;
+
+}
+
+.card h3 {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+/* =========================
+   POPUP
+========================= */
+.popup {
+    display: none;
+    pointer-events: none;
+}
+
+.popup.active {
+    display: flex;
+    pointer-events: auto;
+}
+
+.popup-content {
+    background: #111;
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+}
+
+.popup img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.close {
+    float: right;
+    cursor: pointer;
+}
+
+/* =========================
+   NAV STRUCTURE FIX
+========================= */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.nav-left,
+.nav-center,
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+/* SEARCH CENTER */
+.nav-center {
+    flex: 1;
+    justify-content: center;
+}
+
+.search-bar input {
+    width: 200px;
+}
+
+/* =========================
+   MOBILE FIX
+========================= */
+@media (max-width: 768px) {
+
+    .nav-center {
+        order: 3;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .search-bar input {
+        width: 100%;
+    }
+
+    .hamburger {
+        display: block;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background: rgba(20,20,20,0.95);
+        padding: 15px;
+        z-index: 2000;
+    }
+
+    nav.show {
+        display: flex;
+    }
+
+    nav a {
+        padding: 12px;
+        width: 100%;
+    }
+}
+
+/* =========================
+   FLOAT BUTTON
+========================= */
+.fab {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: red;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.fab:hover {
+    transform: translateX(-50%) scale(1.1);
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer {
+    padding: 40px 20px;
+    margin-top: 40px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.footer-box h3 {
+    margin-bottom: 10px;
+}
+
+.footer-box a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    margin: 5px 0;
+    opacity: 0.8;
+}
+
+.footer-box a:hover {
+    opacity: 1;
+}
+
+/* SOCIALS */
+.socials {
+    display: flex;
+    gap: 10px;
+}
+
+.socials img {
+    width: 25px;
+}
+
+/* FOOTER BOTTOM */
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+/* =========================
+   THEME SWITCH
+========================= */
+.theme-switch {
+    width: 50px;
+    height: 28px;
+    border-radius: 50px;
+    background: rgba(255,255,255,0.2);
+    border: none;
+    cursor: pointer;
+}
+
+/* =========================
+   🔥 UPGRADE: SWIPE POPUP SYSTEM
+========================= */
+.swipe-container {
+    display: flex;
+    width: 200%;
+    height: 100%;
+    transition: transform 0.4s ease;
+}
+
+.swipe-card {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* popup animation */
+.popup.active .swipe-container {
+    animation: popIn 0.25s ease;
+}
+
+@keyframes popIn {
+    from { transform: scale(0.95); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* =========================
+   🔥 UPGRADE: COOK MODE
+========================= */
+.cook-mode {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.95);
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    z-index: 9999;
+}
+
+.cook-mode h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.cook-mode button {
+    margin: 10px;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* =========================
+   🔥 UPGRADE: TOUCH FEEL
+========================= */
+.card,
+nav a,
+.fab {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.card:active {
+    transform: scale(0.97);
+}
+
+/* =========================
+   RESPONSIVE FOOTER
+========================= */
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .socials {
+        justify-content: center;
+    }
+}

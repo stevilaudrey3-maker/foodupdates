@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recipes</title>
+<link rel="stylesheet" href="recipes.css">
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+    <div>WATCH LIVE TV</div>
+
+    <div style="display:flex; gap:10px; align-items:center;">
+        <div id="authArea"></div>
+
+        <button class="theme-switch" onclick="toggleTheme()">
+            <span class="icon sun">☀️</span>
+            <span class="icon moon">🌙</span>
+        </button>
+    </div>
+</div>
+
+<!-- NAV -->
+<header class="navbar">
+
+    <div class="nav-left">
+        <div class="logo">FOOD<span>VIBE</span></div>
+    </div>
+
+    <div class="nav-center">
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search recipes...">
+        </div>
+    </div>
+
+    <div class="nav-right">
+        <div class="hamburger" onclick="toggleMenu(this)">☰</div>
+    </div>
+
+    <nav id="navMenu">
+        <a href="index.html">HOME</a>
+        <a href="recipes.html">RECIPES</a>
+        <a href="shows.html">SHOWS</a>
+        <a href="chefs.html">CHEFS</a>
+        <a href="About.html">SHOP</a>
+    </nav>
+
+</header>
+
+<!-- PAGE -->
+<section class="page">
+    <h1>🍽 Recipes</h1>
+
+    <div class="grid">
+        <!-- CARD 1 -->
+    <div class="card" onclick="this.classList.toggle('flipped')">
+        <div class="card-inner">
+
+            <div class="card-front">
+                <img src="https://images.unsplash.com/photo-1703219342329-fce8488cf443?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fFNwaWN5JTIwQ2hpY2tlbiUyMEJ1cmdlcnxlbnwwfHwwfHx8MA%3D%3D">
+                <h3>Spicy Chicken Burger</h3>
+            </div>
+
+            <div class="card-back">
+                <h3>Spicy Chicken Burger</h3>
+                <p><strong>Ingredients:</strong>
+                    <li>Chicken breast
+                    <li>Spice Mix
+                    <li>egg
+                    <li>breadcrumbs
+                    <li>burger buns.
+                <p>
+            <strong><u>Instructions</u></strong>
+            <ol>
+                <li>Season chicken with chili, paprika, garlic, salt, and pepper.</li>
+                <li>Coat in egg and breadcrumbs, then fry until golden.</li> 
+                <li>Toast bun, spread mayo mixed with chili sauce, add lettuce, tomato, and fried chicken.</li>
+                <li>and serve hot and spicy.</li>
+    
+            </ol>
+            
+            Assemble: Spread spicy mayo on toasted buns. Layer with lettuce, tomato, and the hot chicken patty.
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="card" onclick="this.classList.toggle('flipped')">
+        <div class="card-inner">
+
+            <div class="card-front">
+                <img src="https://images.unsplash.com/photo-1713330801172-03f8d1c0dde7?w=500">
+                <h3>Classic Beef Burger</h3>
+            </div>
+
+            <div class="card-back">
+                <h3>Classic Beef Burger</h3>
+                <p><strong>Ingredients:</strong><br>
+                    <li>Ingredients: 1 lb Ground Beef (80/20)</li>
+                    <li>Salt & Pepper</li>
+                    <li>4 Buns</li>
+                    <li>4 Cheese slices</li>
+                    <li>Toppings: Lettuce, Tomato, Onion, Ketchup/Mustard.</li>
+                </p>
+                <p><strong>Steps:</strong><br>Grill beef → Melt cheese → Toast bun → Assemble burger</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="card" onclick="this.classList.toggle('flipped')">
+        <div class="card-inner">
+
+            <div class="card-front">
+                <img src="https://images.unsplash.com/photo-1516100882582-96c3a05fe590?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aXRhbGlhbiUyMHBhc3RhfGVufDB8fDB8fHww">
+                <h3>Italian Pasta</h3>
+            </div>
+
+            <div class="card-back">
+                <h3>Italian Pasta</h3>
+                <p><strong>Ingredients:</strong><br>Pasta, Basil, Garlic, Olive oil</p>
+                <p><strong>Steps:</strong><br>Boil pasta → Make sauce → Mix → Serve</p>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+        <div class="grid">
+        <!-- CARD 4 -->
+    <div class="card" onclick="this.classList.toggle('flipped')">
+        <div class="card-inner">
+
+            <div class="card-front">
+                <img src="https://images.unsplash.com/photo-1651608603812-1b6589dd3529?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGNyZWFtJTIwc3RyYXdiZXJyeSUyMGNha2V8ZW58MHx8MHx8fDA%3D">
+                <h3>Spicy Chicken Burger</h3>
+            </div>
+
+            <div class="card-back">
+                <h3>Spicy Chicken Burger</h3>
+                <p><strong>Ingredients:</strong>
+                    <li>Chicken: 1 lb ground chicken or 4 boneless chicken thighs.</li>
+                    <li>Spice Mix: 1 tsp each of paprika, garlic powder, onion powder, and salt.</li>
+                    <li>Heat: 1 tsp cayenne pepper or chili powder (adjust to your preference).</li>
+                    <li>1 egg and 1/3 cup breadcrumbs.</li>
+                </p>
+
+                <p>
+            <strong><u>Instructions</u></strong>
+            <ol>
+                <li>Prep Patty: In a bowl, combine chicken with the spice mix, heat, egg, and breadcrumbs. Mix gently and form into 4 patties.</li>
+                <li>Cook: Heat a skillet.Cook patties for 5–6 minutes per side until the internal temperature reaches 165°F (74°C).</li>
+            </ol>
+            
+            Assemble: Spread spicy mayo on toasted buns. Layer with lettuce, tomato, and the hot chicken patty.
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="card" onclick="this.classList.toggle('flipped')">
+        <div class="card-inner">
+
+            <div class="card-front">
+                <img src="https://images.unsplash.com/photo-1687020836451-41977907509e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGNvb2tlZCUyMHNwaWN5JTIwcmljZXxlbnwwfHwwfHx8MA%3D%3D">
+                <h3>Classic Beef Burger</h3>
+            </div>
+
+            <div class="card-back">
+                <h3>Classic Beef Burger</h3>
+                <p><strong>Ingredients:</strong><br>
+                    <li>Ingredients: 1 lb Ground Beef (80/20)</li>
+                    <li>Salt & Pepper</li>
+                    <li>4 Buns</li>
+                    <li>4 Cheese slices</li>
+                    <li>Toppings: Lettuce, Tomato, Onion, Ketchup/Mustard.</li>
+                </p>
+                <p><strong>Steps:</strong><br>Grill beef → Melt cheese → Toast bun → Assemble burger</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- CARD 6 -->
+    <div class="card" onclick="this.classList.toggle('flipped')">
+        <div class="card-inner">
+
+            <div class="card-front">
+                <img src="https://images.unsplash.com/photo-1708782343717-be4ea260249a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y2hhcGF0aXxlbnwwfHwwfHx8MA%3D%3D">
+                <h3>Italian Pasta</h3>
+            </div>
+
+            <div class="card-back">
+                <h3>Italian Pasta</h3>
+                <p><strong>Ingredients:</strong><br>Pasta, Basil, Garlic, Olive oil</p>
+                <p><strong>Steps:</strong><br>Boil pasta → Make sauce → Mix → Serve</p>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+</section>
+
+<!-- 🔥 SWIPE POPUP (UPGRADED) -->
+<div id="popup" class="popup">
+
+    <div class="swipe-container" id="swipeContainer">
+
+        <div class="swipe-card">
+            <h2 id="popupTitle"></h2>
+
+            <img id="popupImg">
+
+            <p id="popupIngredients"></p>
+
+            <button onclick="startCookMode()">🍳 Start Cooking</button>
+        </div>
+
+        <div class="swipe-card">
+            <h3>Steps</h3>
+            <ol id="popupSteps"></ol>
+        </div>
+
+    </div>
+</div>
+
+<!-- 🔥 COOK MODE -->
+<div id="cookMode" class="cook-mode">
+    <h2 id="cookStep"></h2>
+
+    <button onclick="nextStep()">Next ➜</button>
+    <button onclick="exitCookMode()">Exit</button>
+</div>
+
+<!-- FLOAT BUTTON -->
+<div class="fab" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+↑
+</div>
+
+<footer class="footer">
+    <div class="footer-container">
+
+        <div class="footer-box">
+            <h3>About Us</h3>
+            <p>FoodVibe is your modern food discovery platform.</p>
+        </div>
+
+        <div class="footer-box">
+            <h3>Corporation</h3>
+            <a href="#">Careers</a>
+            <a href="#">Partners</a>
+            <a href="#">Investors</a>
+        </div>
+
+        <div class="footer-box">
+            <h3>Terms</h3>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Privacy Policy</a>
+        </div>
+
+        <div class="footer-box">
+            <h3>Follow Us</h3>
+        </div>
+
+    </div>
+</footer>
+
+<script src="scripts.js"></script>
+</body>
+</html>

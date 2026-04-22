@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Foodvibe</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+        <!-- TOP BAR -->
+        <div class="topbar">
+            <div>WATCH LIVE TV</div>
+
+            <div style="display:flex; gap:10px; align-items:center;">
+                <div id="authArea"></div>
+
+                <!-- THEME TOGGLE BUTTON -->
+                <button class="theme-switch" onclick="toggleTheme()">
+                    <span class="icon sun">☀️</span>
+                    <span class="icon moon">🌙</span>
+        </button>
+            </div>
+        </div>
+        <!-- NAV -->
+        <header class="navbar">
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search recipes...">
+        </div>
+            <div class="logo">FOOD<span>VIBE</span></div>
+
+            <!-- HAMBURGER BUTTON -->
+            <div class="hamburger" onclick="toggleMenu(this)">
+                ☰
+            </div>
+
+            <!-- NAV LINKS -->
+            <nav id="navMenu">
+                <a href="recipes.html">RECIPES</a>
+                <a href="shows.html">SHOWS</a>
+                <a href="chefs.html">CHEFS</a>
+                <a href="About.html">SHOP</a>
+            </nav>
+
+        </header>
+
+        <!-- HERO SLIDER -->
+        <section class="hero">
+
+            <div class="slide active">
+                <img src="https://food.fnr.sndimg.com/content/dam/images/food/fullset/2008/10/28/0/southeastasian_grilledpor_s4x3.jpg.rend.hgtvcom.581.436.85.suffix/1392775245255.webp?w=500&auto=format&fit=crop">
+                <div class="overlay"></div>
+
+                <div class="hero-card">
+                    <h1>25 Recipes From Our Test Kitchen</h1>
+                    <p>Perfect 5-Star Meals You Must Try</p>
+                    <button>SEE MORE</button>
+                </div>
+            </div>
+
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1546069901-eacef0df6022?w=800&auto=format&fit=crop">
+                <div class="overlay"></div>
+
+                <div class="hero-card">
+                    <h1>Fresh & Healthy Meal Ideas</h1>
+                    <p>Cook smarter, eat better</p>
+                    <button>EXPLORE</button>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- MAIN -->
+        <div class="content">
+
+            <div class="grid">
+
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1588690793273-4d86028401f0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fGFtYXppbmclMjBtZWF0JTIwcmVjaXBlc3xlbnwwfHwwfHx8MA%3D%3D">
+                    <h3>Amazing meat Recipes</h3>
+                </div>
+
+                <div class="card">
+                    <img src="https://media.istockphoto.com/id/1464405440/photo/plates-with-delicious-oriental-food-on-an-old-wooden-table.webp?a=1&b=1&s=612x612&w=0&k=20&c=hf7xp--SYab88kuUnXbV2_hHaooIbQ7QhuXwMrVbFSM=">
+                    <h3>Tour of Flavortown</h3>
+                </div>
+
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0">
+                    <h3>Quick Dinner Ideas</h3>
+                </div>
+
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1546069901-eacef0df6022">
+                    <h3>Championship Recipes</h3>
+                </div>
+
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1614390955919-e39527ef7ca5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fFF1aWNrJTIwRGlubmVyJTIwSWRlYXN8ZW58MHx8MHx8fDA%3D">
+                    <h3>Healthy & Delicious</h3>
+                </div>
+
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836">
+                    <h3>Global Flavors</h3> 
+                </div>
+
+                <div class="card">
+                    <img src="https://plus.unsplash.com/premium_photo-1695931844305-b5dd90ab6138?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGNoaXBzJTIwYW5kJTIwY2hpY2tlbnxlbnwwfHwwfHx8MA%3D%3D">
+                    <h3>Tour of Flavortown</h3>
+                </div>
+
+                <div class="card">
+                    <img src="https://plus.unsplash.com/premium_photo-1723478699198-aaf73bc6b472?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8UXVpY2slMjBEaW5uZXIlMjBJZGVhc3xlbnwwfHwwfHx8MA%3D%3D">
+                    <h3>Quick Dinner Ideas</h3>
+                </div>
+
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Zm9vZHN8ZW58MHx8MHx8fDA%3D">
+                    <h3>Pizza for everyone</h3>
+                </div>
+
+                <div class="card">
+                    <img src="https://plus.unsplash.com/premium_photo-1701616947399-d9d51380445a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8aGVhbHRoeSUyMGFuZCUyMGRlbGljaW91cyUyMGZvb2R8ZW58MHx8MHx8fDA%3D">
+                    <h3>Healthy & Delicious</h3>
+                </div>
+
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8ZGVzc2VydHN8ZW58MHx8MHx8fDA%3D">
+                    <h3>Delicious Desserts</h3> 
+                </div>
+
+            </div>
+        <section class="favorites">
+            <h2>❤️ Your Favorites</h2>
+            <div id="favoritesList" class="favorites-grid">
+                <p class="empty">No favorites yet</p>
+            </div>
+        </section>
+
+            <aside class="sidebar">
+                <h3>TV Schedule</h3>
+
+                <div class="show">
+                    <span>NOW</span>
+                    <p>Beat Bobby Flay</p>
+                </div>
+
+                <div class="show">
+                    <span>NEXT</span>
+                    <p>Baking Championship</p>
+                </div>
+
+                <button class="live-btn">● WATCH LIVE TV</button>
+            </aside>
+
+        </div>
+            <div id="popup" class="popup">
+                <div class="popup-content">
+                    <span onclick="closePopup()" class="close">✖</span>
+                    <img id="popupImg">
+                    <h2 id="popupTitle"></h2>
+                    <p id="popupText"></p>
+                </div>
+            </div>
+        <div class="fab" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+    ↑   </div>
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <!-- ABOUT -->
+        <div class="footer-box">
+            <h3>About Us</h3>
+            <p>
+                FoodVibe is your modern food discovery platform for recipes, chefs, shows, and shopping inspiration.
+            </p>
+        </div>
+
+        <!-- CORPORATION -->
+        <div class="footer-box">
+            <h3>Corporation</h3>
+            <a href="#">Careers</a>
+            <a href="#">Partners</a>
+            <a href="#">Investors</a>
+        </div>
+
+        <!-- TERMS -->
+        <div class="footer-box">
+            <h3>Terms</h3>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Cookie Policy</a>
+        </div>
+
+        <!-- SOCIALS -->
+        <div class="footer-box">
+            <h3>Follow Us</h3>
+            <div class="socials">
+                <a href="#">
+                    <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter">
+                </a>
+                <a href="#">
+                    <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+                </a>
+                <a href="#">
+                    <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram">
+                </a>
+                <a href="#">
+                    <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub">
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 FoodVibe. All rights reserved.</p>
+    </div>
+
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
