@@ -268,3 +268,30 @@ window.addEventListener("scroll", () => {
         fab.classList.remove("right");
     }
 });
+//=========================
+// SOCIAL DOCK
+//=========================
+document.addEventListener("DOMContentLoaded", () => {
+
+    const fabBtn = document.getElementById("fabBtn");
+    const fabContainer = document.getElementById("fabContainer");
+
+    // SAFETY CHECK (VERY IMPORTANT)
+    if (fabBtn && fabContainer) {
+
+        fabBtn.addEventListener("click", () => {
+
+            fabContainer.classList.toggle("active");
+
+            if (fabContainer.classList.contains("active")) {
+                fabBtn.innerHTML = "×";
+            } else {
+                fabBtn.innerHTML = "+";
+            }
+
+            playClick();
+            vibrate();
+        });
+    }
+
+});
