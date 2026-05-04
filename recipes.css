@@ -81,13 +81,93 @@ body.light-mode .footer {
 
 /* =========================
    SEARCH BAR
-========================= */
-.search-bar input {
-    padding: 8px 12px;
-    border-radius: 10px;
-    border: none;
-    outline: none;
+/*========================= */
+.search-bar {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    margin: 20px auto;
+    margin-right: 50%;
 }
+
+/* ICON */
+.search-bar i {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255,255,255,0.6);
+    font-size: 14px;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+/* INPUT */
+.search-bar input {
+    width: 100%;
+    padding: 16px 16px 14px 40px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.15);
+    outline: none;
+    font-size: 14px;
+    color: #fff;
+
+    /* Glass effect */
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+
+    /* Depth */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+
+    transition: all 0.3s ease;
+}
+
+/* PLACEHOLDER */
+.search-bar input::placeholder {
+    color: #3b82f6;
+}
+
+/* FOCUS = PREMIUM GLOW */
+.search-bar input:focus {
+    border-color: #ff4d4d;
+    box-shadow:
+        0 0 0 2px rgba(255,77,77,0.2),
+        0 0 15px rgba(255,77,77,0.4),
+        0 4px 25px rgba(0,0,0,0.35);
+}
+
+/* ICON ANIMATION ON FOCUS */
+.search-bar input:focus + i,
+.search-bar:focus-within i {
+    color: #ff4d4d;
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* HOVER EFFECT */
+.search-bar input:hover {
+    border-color: rgba(255,255,255,0.3);
+}
+
+/* ACTIVE CLICK FEEL */
+.search-bar input:active {
+    transform: scale(0.98);
+}
+
+/* MOBILE OPTIMIZATION */
+@media (max-width: 600px) {
+    .search-bar {
+        max-width: 100%;
+        padding: 0 10px;
+            margin-right: 0;
+    }
+
+    .search-bar input {
+        font-size: 13px; /* prevents zoom on mobile */
+        padding: 12px 12px 12px 30px;
+        color: chartreuse;
+    }
+}
+
 
 /* =========================
    NAV LINKS
@@ -98,17 +178,103 @@ nav {
 }
 
 nav a {
-    text-decoration: none;
-    color: inherit;
+    display: inline-block;
+    position: relative;
     padding: 8px 14px;
     border-radius: 10px;
+    text-decoration: none;
+    color: inherit;
     transition: 0.3s;
 }
 
-nav a:hover {
-    background: rgba(255,255,255,0.1);
-    transform: translateY(-2px);
+nav a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(90deg, #ff3b3b, #ff9a3b);
+    transition: 0.3s;
 }
+
+nav a:hover::before {
+    width: 100%;
+}
+
+nav a:hover {
+    transform: translateY(-2px);
+    background: rgba(255,255,255,0.08);
+}
+.menu-toggle {
+    display: none;
+    font-size: 26px;
+    cursor: pointer;
+}
+/* =========================
+   MOBILE NAV
+========================= */
+@media (max-width: 768px) {
+
+    nav {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: #111;
+        flex-direction: column;
+        width: 200px;
+        padding: 15px;
+        border-radius: 10px 0 0 10px;
+
+        opacity: 0;
+        transform: translateY(-10px);
+        pointer-events: none;
+        transition: 0.3s ease;
+    }
+
+    nav.active {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+
+    }
+}
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: #111;
+        flex-direction: column;
+        width: 200px;
+        padding: 15px;
+        border-radius: 10px 0 0 10px;
+
+        opacity: 0;
+        transform: translateY(-10px);
+        pointer-events: none;
+        transition: 0.3s ease;
+    }
+
+    nav.active {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+}
+
+/* =========================
+   SEARCH BAR HOVER
+========================= */
+.search-bar input:hover {
+    background: rgba(255,255,255,0.1);
+}
+
 
 /* =========================
    HAMBURGER
@@ -255,13 +421,6 @@ nav a:hover {
 /* =========================
    NAV STRUCTURE FIX
 ========================= */
-.navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    position: relative;
-}
 
 .nav-left,
 .nav-center,
@@ -281,84 +440,150 @@ nav a:hover {
 }
 
 /* =========================
-   MOBILE FIX
+   BULLETPROOF FAB (CIRCLE SYSTEM)
 ========================= */
-@media (max-width: 768px) {
 
-    .nav-center {
-        order: 3;
-        width: 100%;
-        margin-top: 10px;
-    }
+.fab-container {
+    position: fixed;
+    bottom: 24px;
+    right: 40px;
+    width: 60px;
+    height: 60px;
+    z-index: 9999;
+    will-change: transform;
+    margin-left: 90%;
+}
 
-    .search-bar input {
-        width: 100%;
-    }
+/* MAIN BUTTON */
+.fab-main {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
 
-    .hamburger {
-        display: block;
-        font-size: 24px;
-        cursor: pointer;
-    }
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(12px);
+    color: white;
+    font-size: 28px;
 
-    nav {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        flex-direction: column;
-        background: rgba(20,20,20,0.95);
-        padding: 15px;
-        z-index: 2000;
-    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-    nav.show {
-        display: flex;
-    }
+/* BASE ITEM STYLE */
+.fab-item {
+    position: absolute;
+    top: 50%;
+    left: 50%;
 
-    nav a {
-        padding: 12px;
-        width: 100%;
-    }
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+    text-decoration: none;
+
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 0.25s ease;
+    pointer-events: none;
+}
+
+/* SHOW */
+.fab-container.active .fab-item {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    pointer-events: auto;
 }
 
 /* =========================
+   CIRCLE POSITIONS (SAFE ON ALL SCREENS)
+========================= */
+
+.fab-container.active .wa {
+    transform: translate(-50%, -50%) translate(-70px, 0) scale(1);
+    background: #25D366;
+}
+
+.fab-container.active .ig {
+    transform: translate(-50%, -50%) translate(-50px, -50px) scale(1);
+    background: #E1306C;
+}
+
+.fab-container.active .fb {
+    transform: translate(-50%, -50%) translate(0, -70px) scale(1);
+    background: #1877F2;
+}
+
+.fab-container.active .tt {
+    transform: translate(-50%, -50%) translate(50px, -50px) scale(1);
+    background: #000;
+}
+
+/* ICON */
+.fab-item i {
+    font-size: 18px;
+}
+/* =========================
    FLOAT BUTTON
 ========================= */
-.fab {
+.fab { 
     position: fixed;
+    right: 20px;
     bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: red;
-    color: white;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 12px 14px;
+    border-radius: 8px;
+    background: #ff4d4d;
+    color: #fff;
+    border: none;
     cursor: pointer;
-    transition: 0.3s ease;
+    z-index: 1000;
+    transition: bottom 0.3s ease;
+}
+.fab.raise {
+    bottom: 100px; /* adjust based on footer height */
 }
 
 .fab:hover {
     transform: translateX(-50%) scale(1.1);
 }
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
 
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox-box {
+    position: fixed;
+}
 /* =========================
    FOOTER
 ========================= */
 .footer {
     padding: 40px 20px;
     margin-top: 40px;
+    align-content: center;
 }
 
 .footer-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 25px;
+    align-items: center;
 }
 
 .footer-box h3 {
