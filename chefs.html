@@ -3,77 +3,181 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chefs</title>
+<title>Chefs | FoodVibe</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="chefs.css">
 </head>
 <body>
 
+<div class="topbar">
+    <div>WATCH LIVE TV</div>
+    <div style="display:flex; gap:10px; align-items:center;">
+        <div id="authArea"></div>
+        <button class="theme-switch" onclick="toggleTheme()">
+            <span class="icon sun">☀️</span>
+            <span class="icon moon">🌙</span>
+        </button>
+    </div>
+</div>
+
 <header class="navbar">
-    <a href="index.html" class="home-btn">🏠 Home</a>
     <div class="logo">FOOD<span>VIBE</span></div>
+    <div class="menu-toggle" id="menuToggle">☰</div>
+    <nav id="navMenu">
+        <span><a href="index.html">HOME</a></span>
+        <span><a href="recipes.html">RECIPES</a></span>
+        <span><a href="chefs.html" class="active">CHEFS</a></span>
+        <span><a href="shop.html">SHOP</a></span>
+    </nav>
 </header>
 
-<section class="page">
-    <h1>👨‍🍳 Chefs</h1>
-
-    <div class="grid">
-        <div class="card">
-            <h3>Gordon Ramsay</h3>
-            <p><strong>Qualifications:</strong> Michelin-starred chef, Culinary degree from North Oxon Technical College</p>
-            <p><strong>Best Cooked Foods:</strong> Beef Wellington, Sticky Toffee Pudding, Filet Mignon</p>
-        </div>
-        <div class="card">
-            <h3>Jamie Oliver</h3>
-            <p><strong>Qualifications:</strong> Self-taught, TV Personality, Culinary expertise in Italian cuisine</p>
-            <p><strong>Best Cooked Foods:</strong> Pasta Carbonara, Roasted Chicken, Fresh Salads</p>
-        </div>
-        <div class="card">
-            <h3>Wolfgang Puck</h3>
-            <p><strong>Qualifications:</strong> Owner of multiple Michelin-starred restaurants, Pioneer of California cuisine</p>
-            <p><strong>Best Cooked Foods:</strong> Gourmet Pizza, Austrian Schnitzel, Pan-seared Scallops</p>
-        </div>
-        <div class="card">
-            <h3>Julia Child</h3>
-            <p><strong>Qualifications:</strong> Diploma from Le Cordon Bleu, French cuisine specialist</p>
-            <p><strong>Best Cooked Foods:</strong> Coq au Vin, Beef Bourguignon, French Onion Soup</p>
-        </div>
-        <div class="card">
-            <h3>Thomas Keller</h3>
-            <p><strong>Qualifications:</strong> Owner of The French Laundry, Master of Contemporary French</p>
-            <p><strong>Best Cooked Foods:</strong> Pan-roasted Lobster, Herb-Crusted Fish, Truffle Pasta</p>
-        </div>
-        <div class="card">
-            <h3>Alice Waters</h3>
-            <p><strong>Qualifications:</strong> Founder of Chez Panisse, Champion of farm-to-table movement</p>
-            <p><strong>Best Cooked Foods:</strong> Seasonal Vegetables, Organic Chicken, Fresh Seafood</p>
-        </div>
-        <div class="card">
-            <h3>Bobby Flay</h3>
-            <p><strong>Qualifications:</strong> Culinary Institute of America graduate, Southwestern food expert</p>
-            <p><strong>Best Cooked Foods:</strong> Grilled Fish Tacos, Chipotle BBQ Brisket, Corn Bisque</p>
-        </div>
-        <div class="card">
-            <h3>Emeril Lagasse</h3>
-            <p><strong>Qualifications:</strong> Johnson & Wales University graduate, Cajun & Creole specialist</p>
-            <p><strong>Best Cooked Foods:</strong> Gumbo, Jambalaya, Blackened Fish</p>
-        </div>
-        <div class="card">
-            <h3>Marco Pierre White</h3>
-            <p><strong>Qualifications:</strong> Youngest 3-Michelin-star chef, British culinary legend</p>
-            <p><strong>Best Cooked Foods:</strong> Roast Duck, Lobster Bisque, Steak with Foie Gras</p>
-        </div>
-        <div class="card">
-            <h3>Nobu Matsuhisa</h3>
-            <p><strong>Qualifications:</strong> Pioneer of Peruvian-Japanese fusion, Michelin-starred restaurants worldwide</p>
-            <p><strong>Best Cooked Foods:</strong> Black Cod with Miso, Yellowtail Jalapeño Sashimi, Omakase</p>
-        </div>
-        <div class="card">
-            <h3>Eric Ripert</h3>
-            <p><strong>Qualifications:</strong> Executive Chef at Le Bernardin, 3-Michelin-star restaurant, French seafood specialist</p>
-            <p><strong>Best Cooked Foods:</strong> Pan-seared Halibut, Lobster Thermidor, Dover Sole Meunière</p>
+<section class="chef-hero">
+    <div class="hero-copy">
+        <p>Handpicked culinary architects</p>
+        <h1>Meet the chefs crafting every unforgettable meal.</h1>
+        <div class="hero-actions">
+            <a href="#chefGrid" class="btn primary">Meet the Chefs</a>
+            <a href="recipes.html" class="btn secondary">Explore Recipes</a>
         </div>
     </div>
 </section>
 
+<main class="page">
+    <h1 id="chefGrid">👨‍🍳 Legendary Chefs</h1>
+    <div class="grid">
+        <div class="card">
+            <div class="chef-image">
+                <img src="https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Y2hlZnN8ZW58MHx8MHx8fDA%3D" alt="Gordon Ramsay">
+            </div>
+            <h3>Gordon Ramsay</h3>
+            <p><strong>Qualifications:</strong> Michelin-starred chef, Culinary degree from North Oxon Technical College</p>
+            <p><strong>Specialties:</strong> Beef Wellington, Sticky Toffee Pudding, Filet Mignon</p>
+        </div>
+        <div class="card">
+            <div class="chef-image">
+                <img src="https://media.istockphoto.com/id/2213060060/photo/happy-chef-working-in-a-busy-kitchen-at-a-restaurant.webp?a=1&b=1&s=612x612&w=0&k=20&c=im1fQB7jFGNxiQFL0aJDlm7UgUFlUPWKpClap-c1oG0=" alt="Jamie Oliver">
+            </div>
+            <h3>Jamie Oliver</h3>
+            <p><strong>Qualifications:</strong> Self-taught TV personality, Italian cuisine expert</p>
+            <p><strong>Specialties:</strong> Pasta Carbonara, Roasted Chicken, Fresh Salads</p>
+        </div>
+        <div class="card">
+            <div class="chef-image">
+                <img src="https://images.unsplash.com/photo-1722152667178-be659e54bffc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGNoZWZzfGVufDB8fDB8fHww" alt="Wolfgang Puck">
+            </div>
+            <h3>Wolfgang Puck</h3>
+            <p><strong>Qualifications:</strong> Michelin-starred restaurateur, California cuisine pioneer</p>
+            <p><strong>Specialties:</strong> Gourmet Pizza, Austrian Schnitzel, Scallops</p>
+        </div>
+        <div class="card">
+            <div class="chef-image">
+                <img src="https://media.istockphoto.com/id/1462953603/photo/chef-teacher-teaches-cooking-to-the-group-children-in-class-kitchen-room-chef-preparing.webp?a=1&b=1&s=612x612&w=0&k=20&c=yCF9XV3-ZRyDbat4nn4fXoPSQqVCdZgHEUaiJmdItTo=" alt="Julia Child">
+            </div>
+            <h3>Julia Child</h3>
+            <p><strong>Qualifications:</strong> Le Cordon Bleu graduate, French cuisine legend</p>
+            <p><strong>Specialties:</strong> Coq au Vin, Beef Bourguignon, French Onion Soup</p>
+        </div>
+        <div class="card">
+            <div class="chef-image">
+                <img src="https://plus.unsplash.com/premium_photo-1661349726691-d5efab008d77?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjV8fGNoZWZzfGVufDB8fDB8fHww" alt="Thomas Keller">
+            </div>
+            <h3>Thomas Keller</h3>
+            <p><strong>Qualifications:</strong> Chef-owner of The French Laundry, contemporary French master</p>
+            <p><strong>Specialties:</strong> Lobster, Herb-Crusted Fish, Truffle Pasta</p>
+        </div>
+        <div class="card">
+            <div class="chef-image">
+                <img src="https://plus.unsplash.com/premium_photo-1661601616684-8b8a2939ce1a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Njl8fGNoZWZzfGVufDB8fDB8fHww" alt="Emeril Lagasse">
+                <img src="" alt="Alice Waters">
+            </div>
+            <h3>Alice Waters</h3>
+            <p><strong>Qualifications:</strong> Farm-to-table pioneer, founder of Chez Panisse</p>
+            <p><strong>Specialties:</strong> Seasonal Vegetables, Organic Chicken, Fresh Seafood</p>
+        </div>
+        <div class="card">
+            <div class="chef-image">
+                <img src="https://plus.unsplash.com/premium_photo-1687697860459-e4a751f80f1d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDF8fGNoZWZzfGVufDB8fDB8fHww" alt="Bobby Flay">
+            </div>
+            <h3>Bobby Flay</h3>
+            <p><strong>Qualifications:</strong> Culinary Institute of America graduate, Southwestern expert</p>
+            <p><strong>Specialties:</strong> Fish Tacos, BBQ Brisket, Corn Bisque</p>
+        </div>
+        <div class="card">
+            <div class="chef-image">
+                <img src="https://plus.unsplash.com/premium_photo-1687697859878-17e9ef6c75e6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODV8fGNoZWZzfGVufDB8fDB8fHww" alt="Emeril Lagasse">
+            </div>
+            <h3>Emeril Lagasse</h3>
+            <p><strong>Qualifications:</strong> Cajun & Creole specialist, TV celebrity chef</p>
+            <p><strong>Specialties:</strong> Gumbo, Jambalaya, Blackened Fish</p>
+        </div>
+        <div class="card">
+            <div class="chef-image">
+                <img src="https://plus.unsplash.com/premium_photo-1661778029158-e1a758c26bf7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODF8fGNoZWZzfGVufDB8fDB8fHww" alt="Nobu Matsuhisa">
+            </div>
+            <h3>Nobu Matsuhisa</h3>
+            <p><strong>Qualifications:</strong> Fusion cuisine innovator, global restaurateur</p>
+            <p><strong>Specialties:</strong> Black Cod with Miso, Sashimi, Omakase</p>
+        </div>
+        <div class="card">
+            <div class="chef-image">
+                <img src="https://plus.unsplash.com/premium_photo-1664300594005-0491d349b91c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTA1fHxjaGVmc3xlbnwwfHwwfHx8MA%3D%3D" alt="Eric Ripert">
+            </div>
+            <h3>Eric Ripert</h3>
+            <p><strong>Qualifications:</strong> Executive Chef at Le Bernardin, seafood authority</p>
+            <p><strong>Specialties:</strong> Halibut, Lobster Thermidor, Dover Sole Meunière</p>
+        </div>
+    </div>
+</main>
+
+<div class="fab-container" id="fabContainer">
+    <button class="fab-main" id="fabBtn">+</button>
+    <div class="fab-options">
+        <a href="https://wa.me/254111346022?text=Hello%20I%20found%20your%20Foodvibe%20website" class="fab-item wa">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <a href="https://www.instagram.com/gichane001/" class="fab-item ig">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://www.facebook.com/Biancah002/" class="fab-item fb">
+            <i class="fa-brands fa-facebook-f"></i>
+        </a>
+        <a href="https://www.tiktok.com/@stevil_351" class="fab-item tt">
+            <i class="fa-brands fa-tiktok"></i>
+        </a>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-box">
+            <h3>About Us</h3>
+            <p>FoodVibe is your modern food discovery platform.</p>
+        </div>
+        <div class="footer-box">
+            <h3>Corporation</h3>
+            <a href="#">Careers</a>
+            <a href="#">Partners</a>
+            <a href="#">Investors</a>
+        </div>
+        <div class="footer-box">
+            <h3>Terms</h3>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Cookie Policy</a>
+        </div>
+        <div class="footer-box">
+            <h3>Contact</h3>
+            <a href="mailto:hello@foodvibe.com">hello@foodvibe.com</a>
+            <a href="#">Support</a>
+            <a href="#">Live Chat</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 FoodVibe. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="scripts.js"></script>
 </body>
 </html>
